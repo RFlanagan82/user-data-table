@@ -15,9 +15,10 @@ export default function DataTable() {
   const ITEMS_PER_PAGE = 50;
 
   const headers = [
-    { name: "No#", field: "id", sortable: false },
-    { name: "Name", field: "name", sortable: true },
-    { name: "Email", field: "email", sortable: true },
+    { name: "First Name", field: "firstName", sortable: true },
+    { name: "Last Name", field: "lastName", sortable: true },
+    { name: "Email", field: "email", sortable: false },
+    { name: "GitHub", field: "github", sortable: false },
     // { name: "Comment", field: "body", sortable: false },
   ];
 
@@ -87,10 +88,18 @@ export default function DataTable() {
             />
             <tbody>
               <tr>
-                <th scope="row">Row label</th>
-                <td>cell 1</td>
-                <td>cell 2</td>
+                <td>first</td>
+                <td>last</td>
+                <td>email</td>
+                <td>github</td>
               </tr>
+              {users.map((user) => (
+                <tr>
+                  <td>cell 1</td>
+                  <td>cell 2</td>
+                  <td>cell 3</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
