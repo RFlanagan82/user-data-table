@@ -22,19 +22,48 @@ export default function DataTable() {
     // { name: "Comment", field: "body", sortable: false },
   ];
 
+  const userData = [
+    {
+      firstName: "Jude",
+      lastName: "Clark",
+      email: "judeclark2019@gmail.com",
+      github: "judeclark19",
+    },
+    {
+      firstName: "Navdeep",
+      lastName: "Puri",
+      email: "navdeep.puri@gmail.com",
+      github: "NavdeepDP",
+    },
+    {
+      firstName: "Jada",
+      lastName: "Arnett",
+      email: "jada.arnett@gmail.com",
+      github: "jadavianett",
+    },
+    {
+      firstName: "Ashley",
+      lastName: "Brown",
+      email: "fay.ashbro@gmail.com",
+      github: "afbrown1216",
+    },
+  ];
+
   useEffect(() => {
-    const getData = () => {
-      //   showLoader();
+    // const getData = () => {
+    //   //   showLoader();
 
-      fetch("https://randomuser.me/api/?results=10")
-        .then((response) => response.json())
-        .then((json) => {
-          setUsers(json.results);
-          console.log(users);
-        });
-    };
+    //   fetch("https://randomuser.me/api/?results=10")
+    //     .then((response) => response.json())
+    //     .then((json) => {
+    //       setUsers(json.results);
+    //       console.log(users);
+    //     });
+    // };
 
-    getData();
+    // getData();
+
+    setUsers(userData);
   }, []);
 
   // const commentsData = useMemo(() => {
@@ -87,17 +116,12 @@ export default function DataTable() {
               onSorting={(field, order) => setSorting({ field, order })}
             />
             <tbody>
-              <tr>
-                <td>first</td>
-                <td>last</td>
-                <td>email</td>
-                <td>github</td>
-              </tr>
               {users.map((user) => (
-                <tr>
-                  <td>cell 1</td>
-                  <td>cell 2</td>
-                  <td>cell 3</td>
+                <tr key={user.github}>
+                  <td>{user.firstName}</td>
+                  <td>{user.lastName}</td>
+                  <td>{user.email}</td>
+                  <td>{user.github}</td>
                 </tr>
               ))}
             </tbody>
