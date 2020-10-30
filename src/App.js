@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import React, { useEffect, useState, useMemo } from "react";
 import "./App.css";
 import Header from "./components/Header/index.js";
 
-const App = () => {
+export default function App() {
   // const [comments, setComments] = useState([]);
   // // const [loader, showLoader, hideLoader] = useFullPageLoader();
   // const [totalItems, setTotalItems] = useState(0);
@@ -66,12 +66,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
         <p>Edit successful</p>
       </header>
     </div>
   );
-};
+}
 
-export default App;
+// export default App;
 // =================================================================================================================
