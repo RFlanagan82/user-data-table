@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 // import ExternalInfo from "components/ExternalInfo";
 
 export default function DataTable() {
-  // const [comments, setComments] = useState([]);
+  const [users, setUsers] = useState([]);
   //   const [loader, showLoader, hideLoader] = useFullPageLoader();
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,8 +28,8 @@ export default function DataTable() {
       fetch("https://randomuser.me/api/?results=10")
         .then((response) => response.json())
         .then((json) => {
-          console.log("LOOK HERE =======================================>");
-          console.log(json);
+          setUsers(json.results);
+          console.log(users);
         });
     };
 
