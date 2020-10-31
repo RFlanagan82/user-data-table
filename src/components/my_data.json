@@ -222,5 +222,33 @@
     "lastName": "Westin",
     "email": "amanda.fici@gmail.com",
     "github": "a-westin"
+  },
+  {
+    "id": 33,
+    "firstName": "Kesha",
+    "lastName": "Hall",
+    "email": "k_renee10@yahoo.com",
+    "github": "hallkr86"
+  },
+  {
+    "id": 34,
+    "firstName": "Caleb",
+    "lastName": "Deal",
+    "email": "cddeal12@gmail.com",
+    "github": "cddeal12"
+  },
+  {
+    "id": 35,
+    "firstName": "Cameron",
+    "lastName": "Lay",
+    "email": "cameronlay15@gmail.com",
+    "github": "cameronlay15"
+  },
+  {
+    "id": 36,
+    "firstName": "Jonathan",
+    "lastName": "Peach",
+    "email": "jonmakesitbetter@gmail.com",
+    "github": "jonmakesitbetter"
   }
 ]
