@@ -41,11 +41,21 @@ const DataTable = () => {
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render("Header")}
                     <span>
-                      {column.isSorted
-                        ? column.isSortedDesc
-                          ? " 🔽"
-                          : " 🔼"
-                        : ""}
+                      {column.isSorted ? (
+                        column.isSortedDesc ? (
+                          <span>
+                            {"  "}
+                            <i class="fas fa-arrow-down"></i>
+                          </span>
+                        ) : (
+                          <span>
+                            {"  "}
+                            <i class="fas fa-arrow-up"></i>
+                          </span>
+                        )
+                      ) : (
+                        ""
+                      )}
                     </span>
                   </th>
                 ))}
