@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Averia Libre", cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.jumbotron {
+  margin-bottom: -32px;
+  height: 350px;
+  color: white;
+  background: rgb(224, 170, 255);
+  background: linear-gradient(
+    121deg,
+    rgba(224, 170, 255, 1) 0%,
+    rgba(16, 0, 43, 1) 92%
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.display-4 {
+  font-size: 55pt;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.lead {
+  font-size: 30pt;
+}
+
+#blurb {
+  /* border: 1px solid white; */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(71, 71, 71, 0.5);
+  position: absolute;
+  top: 270px;
+  left: 10px;
+  color: white;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#search-span {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: black;
+  position: absolute;
+  top: 260px;
+  right: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 56px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table tr th {
+  /* color: red; */
+  font-size: 18pt;
+}
+
+table tr td {
+  /* color: red; */
+  font-size: 14pt;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #333333;
+  color: white;
+}
+
+.navbar {
+  background-color: #ccc !important;
+}
+
+.navbar-brand {
+  margin: auto;
+  /* border: 2px solid red; */
 }

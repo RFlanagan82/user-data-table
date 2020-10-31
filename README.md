@@ -1,2 +1,3 @@
-https://www.smashingmagazine.com/2020/03/sortable-tables-react/
-https://www.youtube.com/watch?v=emX5KvZ6Hbo&feature=youtu.be
+# User Data Table
+
+https://www.youtube.com/playlist?list=PLC3y8-rFHvwgWTSrDiwmUsl4ZvipOw9Cz
