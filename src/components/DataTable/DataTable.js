@@ -1,132 +1,109 @@
-import React, { useEffect, useState, useMemo } from "react";
-// import Header from "../Header/Header";
-// import { TableHeader, Pagination, Search } from "components/DataTable";
-// import ExternalInfo from "hooks/useFullPageLoader";
-// import ExternalInfo from "components/ExternalInfo";
-const userData = [
-  {
-    firstName: "Jude",
-    lastName: "Clark",
-    email: "judeclark2019@gmail.com",
-    github: "judeclark19",
-  },
-  {
-    firstName: "Navdeep",
-    lastName: "Puri",
-    email: "navdeep.puri@gmail.com",
-    github: "NavdeepDP",
-  },
-  {
-    firstName: "Jada",
-    lastName: "Arnett",
-    email: "jada.arnett@gmail.com",
-    github: "jadavianett",
-  },
-  {
-    firstName: "Ashley",
-    lastName: "Brown",
-    email: "fay.ashbro@gmail.com",
-    github: "afbrown1216",
-  },
-];
+import React from "react";
+import "./styles.css";
 
-export default function DataTable() {
-  const [users, setUsers] = useState(userData);
-  const [sortedField, setSortedField] = useState(null);
-  const [totalItems, setTotalItems] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [search, setSearch] = useState("");
-  const [sorting, setSorting] = useState({ field: "", order: "" });
+const useSortableData = (items, config = null) => {
+  const [sortConfig, setSortConfig] = React.useState(config);
 
-  const ITEMS_PER_PAGE = 50;
-
-  const headers = [
-    { name: "First Name", field: "firstName", sortable: true },
-    { name: "Last Name", field: "lastName", sortable: true },
-    { name: "Email", field: "email", sortable: true },
-    { name: "GitHub", field: "github", sortable: true },
-    // { name: "Comment", field: "body", sortable: false },
-  ];
-
-  let sortedUsers = [...userData];
-  sortedUsers.sort((a, b) => {
-    if (a.firstName < b.firstName) {
-      return -1;
+  const sortedItems = React.useMemo(() => {
+    let sortableItems = [...items];
+    if (sortConfig !== null) {
+      sortableItems.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? 1 : -1;
+        }
+        return 0;
+      });
     }
-    if (a.firstName > b.firstName) {
-      return 1;
-    }
-    return 0;
-  });
+    return sortableItems;
+  }, [items, sortConfig]);
 
+  const requestSort = (key) => {
+    let direction = "ascending";
+    if (
+      sortConfig &&
+      sortConfig.key === key &&
+      sortConfig.direction === "ascending"
+    ) {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  return { items: sortedItems, requestSort, sortConfig };
+};
+
+const ProductTable = (props) => {
+  const { items, requestSort, sortConfig } = useSortableData(props.products);
+  const getClassNamesFor = (name) => {
+    if (!sortConfig) {
+      return;
+    }
+    return sortConfig.key === name ? sortConfig.direction : undefined;
+  };
   return (
-    <>
-      <div className="row w-100">
-        <div className="col mb-3 col-12 text-center">
-          <div className="row">
-            <div className="col-md-6"></div>
-            <div className="col-md-6 d-flex flex-row-reverse">
-              {/* <Search
-                onSearch={(value) => {
-                  setSearch(value);
-                  setCurrentPage(1);
-                }}
-              /> */}
-            </div>
-          </div>
+    <table>
+      <caption>Products</caption>
+      <thead>
+        <tr>
+          <th>
+            <button
+              type="button"
+              onClick={() => requestSort("name")}
+              className={getClassNamesFor("name")}
+            >
+              Name
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              onClick={() => requestSort("price")}
+              className={getClassNamesFor("price")}
+            >
+              Price
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              onClick={() => requestSort("stock")}
+              className={getClassNamesFor("stock")}
+            >
+              In Stock
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {items.map((item) => (
+          <tr key={item.id}>
+            <td>{item.name}</td>
+            <td>${item.price}</td>
+            <td>{item.stock}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
-          <table className="table table-striped">
-            {/* <Header
-              headers={headers}
-              onSorting={(field, order) => setSorting({ field, order })}
-            /> */}
-            <thead>
-              <tr>
-                <th
-                  onClick={() => {
-                    setSortedField("firstName");
-                  }}
-                >
-                  First Name
-                </th>
-                <th
-                  onClick={() => {
-                    setSortedField("lastName");
-                  }}
-                >
-                  Last Name
-                </th>
-                <th
-                  onClick={() => {
-                    setSortedField("email");
-                  }}
-                >
-                  Email
-                </th>
-                <th
-                  onClick={() => {
-                    setSortedField("github");
-                  }}
-                >
-                  GitHub
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.github}>
-                  <td>{user.firstName}</td>
-                  <td>{user.lastName}</td>
-                  <td>{user.email}</td>
-                  <td>{user.github}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </>
+export default function App() {
+  return (
+    <div className="App">
+      <ProductTable
+        products={[
+          { id: 1, name: "Cheese", price: 4.9, stock: 20 },
+          { id: 2, name: "Milk", price: 1.9, stock: 32 },
+          { id: 3, name: "Yoghurt", price: 2.4, stock: 12 },
+          { id: 4, name: "Heavy Cream", price: 3.9, stock: 9 },
+          { id: 5, name: "Butter", price: 0.9, stock: 99 },
+          { id: 6, name: "Sour Cream ", price: 2.9, stock: 86 },
+          { id: 7, name: "Fancy French Cheese 🇫🇷", price: 99, stock: 12 },
+        ]}
+      />
+    </div>
   );
 }
-
-// export default DataTable;
