@@ -3,7 +3,7 @@ import { useTable } from "react-table";
 import my_data from "./my_data.json";
 import { COLUMNS } from "./columns";
 
-const BasicTable = () => {
+const SortingTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => my_data, []);
 
@@ -51,4 +51,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default SortingTable;
