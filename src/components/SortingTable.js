@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import my_data from "./my_data.json";
 import { COLUMNS } from "./columns";
 
@@ -7,10 +7,13 @@ const SortingTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => my_data, []);
 
-  const tableInstance = useTable({
-    columns: columns,
-    data: data,
-  });
+  const tableInstance = useTable(
+    {
+      columns: columns,
+      data: data,
+    },
+    useSortBy
+  );
 
   const {
     getTableProps,
@@ -27,7 +30,9 @@ const SortingTable = () => {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                </th>
               ))}
             </tr>
           ))}
