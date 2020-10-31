@@ -52,28 +52,37 @@ const UserTable = (props) => {
           <th>
             <button
               type="button"
-              onClick={() => requestSort("name")}
-              className={getClassNamesFor("name")}
+              onClick={() => requestSort("firstName")}
+              className={getClassNamesFor("firstName")}
             >
-              Name
+              First Name
             </button>
           </th>
           <th>
             <button
               type="button"
-              onClick={() => requestSort("price")}
-              className={getClassNamesFor("price")}
+              onClick={() => requestSort("lastName")}
+              className={getClassNamesFor("lastName")}
             >
-              Price
+              Last Name
             </button>
           </th>
           <th>
             <button
               type="button"
-              onClick={() => requestSort("stock")}
-              className={getClassNamesFor("stock")}
+              onClick={() => requestSort("email")}
+              className={getClassNamesFor("email")}
             >
-              In Stock
+              Email
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              onClick={() => requestSort("github")}
+              className={getClassNamesFor("github")}
+            >
+              Github
             </button>
           </th>
         </tr>
@@ -81,9 +90,10 @@ const UserTable = (props) => {
       <tbody>
         {items.map((item) => (
           <tr key={item.id}>
-            <td>{item.name}</td>
-            <td>${item.price}</td>
-            <td>{item.stock}</td>
+            <td>{item.firstName}</td>
+            <td>{item.lastName}</td>
+            <td>{item.email}</td>
+            <td>{item.github}</td>
           </tr>
         ))}
       </tbody>
@@ -97,13 +107,139 @@ export default function App() {
       <header>Static page header here</header>
       <UserTable
         users={[
-          { id: 1, name: "Cheese", price: 4.9, stock: 20 },
-          { id: 2, name: "Milk", price: 1.9, stock: 32 },
-          { id: 3, name: "Yoghurt", price: 2.4, stock: 12 },
-          { id: 4, name: "Heavy Cream", price: 3.9, stock: 9 },
-          { id: 5, name: "Butter", price: 0.9, stock: 99 },
-          { id: 6, name: "Sour Cream ", price: 2.9, stock: 86 },
-          { id: 7, name: "Fancy French Cheese 🇫🇷", price: 99, stock: 12 },
+          {
+            id: 1,
+            firstName: "Jude",
+            lastName: "Clark",
+            email: "judeclark2019@gmail.com",
+            github: "judeclark19",
+          },
+          {
+            id: 2,
+            firstName: "Navdeep",
+            lastName: "Puri",
+            email: "navdeep.puri@gmail.com",
+            github: "NavdeepDP",
+          },
+          {
+            id: 3,
+            firstName: "Jada",
+            lastName: "Arnett",
+            email: "Jada's email",
+            github: "Jada's github",
+          },
+          {
+            id: 4,
+            firstName: "Ashley",
+            lastName: "Brown",
+            email: "fay.ashbro@gmail.com",
+            github: "afbrown1216",
+          },
+          {
+            id: 5,
+            firstName: "Aubrey",
+            lastName: "Polk",
+            email: "?",
+            github: "aubstacle",
+          },
+          {
+            id: 6,
+            firstName: "Ali",
+            lastName: "Khan",
+            email: "ali.khan4990@gmail.com",
+            github: "icecicle04",
+          },
+          {
+            id: 7,
+            firstName: "Calvin",
+            lastName: "Griffin",
+            email: "cgriffin332@gmail.com",
+            github: "cgriffin332",
+          },
+          {
+            id: 8,
+            firstName: "Jimmy",
+            lastName: "Alonso",
+            email: "jvalon9455@gmail.com",
+            github: "jvalon9455",
+          },
+          {
+            id: 9,
+            firstName: "Eduardo",
+            lastName: "Pineda",
+            email: "edibozu@gmail.com",
+            github: "Edibozu",
+          },
+          {
+            id: 10,
+            firstName: "Vincent",
+            lastName: "Kendrick",
+            email: "?",
+            github: "dagreatcode",
+          },
+          {
+            id: 11,
+            firstName: "Joe",
+            lastName: "Lowery",
+            email: "?",
+            github: "CrazyJoeShow",
+          },
+          {
+            id: 12,
+            firstName: "Joseph",
+            lastName: "Perry",
+            email: "josephperry720@gmail.com",
+            github: "dgtlctzn",
+          },
+          {
+            id: 13,
+            firstName: "Lauren",
+            lastName: "Noeltner",
+            email: "laurennoeltner@gmail.com",
+            github: "LNoeltner1",
+          },
+          {
+            id: 14,
+            firstName: "Erin",
+            lastName: "Crocker",
+            email: "erinleecrocker@gmail.com",
+            github: "erinleecrocker",
+          },
+          {
+            id: 15,
+            firstName: "Jeff",
+            lastName: "Flynn",
+            email: "jeffreyedwardflynn@gmail.com",
+            github: "7J647",
+          },
+          {
+            id: 16,
+            firstName: "Rayshawn",
+            lastName: "Bray",
+            email: "raybray219@yahoo.com",
+            github: "2coldray",
+          },
+          {
+            id: 17,
+            firstName: "Thomas",
+            lastName: "Walsh",
+            email: "thomas.walsh736@gmail.com",
+            github: "Kelendoheim",
+          },
+          {
+            id: 18,
+            firstName: "Cody",
+            lastName: "Bonsma",
+            email: "codybonsma@gmail.com",
+            github: "CodyBonsma",
+          },
+          {
+            id: 19,
+            firstName: "Aimee",
+            lastName: "Esler",
+            email: "aimeecesler@gmail.com",
+            github: "aimeecesler",
+          },
         ]}
       />
     </div>
