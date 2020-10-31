@@ -1,6 +1,6 @@
 import React from "react";
 
-const Blurb = ({}) => {
+const Blurb = () => {
   return <div id="blurb">Click on any column header to sort.</div>;
 };
 

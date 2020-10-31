@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = ({}) => {
+const Footer = () => {
   return (
     <nav class="navbar fixed-bottom navbar-light bg-light">
       <span class="navbar-brand">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const PageHeader = ({}) => {
+const PageHeader = () => {
   return (
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
