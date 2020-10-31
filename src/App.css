@@ -1,8 +1,9 @@
 * {
-  font-family: "Averia Libre", cursive;
+  font-family: "Nunito", sans-serif;
 }
 
 .jumbotron {
+  -webkit-text-stroke: 1px #5a3d76;
   margin-bottom: -32px;
   height: 270px;
   color: white;
@@ -15,15 +16,14 @@
 }
 
 .display-4 {
-  font-size: 55pt;
+  font-size: 60pt;
 }
 
 .lead {
-  font-size: 30pt;
+  font-size: 35pt;
 }
 
 #blurb {
-  /* border: 1px solid white; */
   padding: 10px;
   border-radius: 5px;
   background-color: rgba(90, 61, 119, 0.5);
@@ -39,22 +39,14 @@
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 5px;
-  /* background-color: #1a0834; */
   position: absolute;
   top: 300px;
   right: 100px;
   color: white;
   background-color: rgb(90, 61, 119);
-  /* background: rgb(224, 170, 255);
-  background: linear-gradient(
-    121deg,
-    rgba(224, 170, 255, 1) 0%,
-    rgba(16, 0, 43, 1) 92%
-  ); */
 }
 
 #table-wrapper {
-  /* border: 1px dashed lime; */
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 140px;
