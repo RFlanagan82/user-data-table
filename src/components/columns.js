@@ -1,8 +1,8 @@
 export const COLUMNS = [
-  {
-    Header: "ID",
-    accessor: "id",
-  },
+  // {
+  //   Header: "ID",
+  //   accessor: "id",
+  // },
   {
     Header: "First Name",
     accessor: "firstName",
@@ -16,7 +16,7 @@ export const COLUMNS = [
     accessor: "email",
   },
   {
-    Header: "Github",
+    Header: "Github Username",
     accessor: "github",
   },
 ];
