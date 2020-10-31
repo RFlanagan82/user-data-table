@@ -23,12 +23,6 @@ export default function Header({ headers, onSorting }) {
             onClick={() => (sortable ? onSortingChange(field) : null)}
           >
             {name}
-
-            {sortingField && sortingField === field && (
-              <FontAwesomeIcon
-                icon={sortingOrder === "asc" ? "arrow-down" : "arrow-up"}
-              />
-            )}
           </th>
         ))}
       </tr>
