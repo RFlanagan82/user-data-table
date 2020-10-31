@@ -11,15 +11,28 @@ export const BasicTable = () => {
     columns: columns,
     data: data,
   });
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = tableInstance;
+
   return (
     <div>
-      <table>
+      <table {...getTableProps()}>
         <thead>
-          <tr>
-            <th></th>
-          </tr>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              ))}
+            </tr>
+          ))}
         </thead>
-        <tbody>
+        <tbody {...getTableBodyProps()}>
           <tr>
             <td></td>
           </tr>
