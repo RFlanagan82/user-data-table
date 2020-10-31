@@ -7,9 +7,24 @@ export const BasicTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => my_data, []);
 
-  useTable({
+  const tableInstance = useTable({
     columns: columns,
     data: data,
   });
-  return <div></div>;
+  return (
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 };
