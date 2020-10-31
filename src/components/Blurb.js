@@ -1,7 +1,11 @@
 import React from "react";
 
-const Blurb = () => {
-  return <div id="blurb">Click on any column header to sort.</div>;
+const Blurb = (props) => {
+  return (
+    <>
+      <div id="blurb">{props.text}</div>
+    </>
+  );
 };
 
 export default Blurb;

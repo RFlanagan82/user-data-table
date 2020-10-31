@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <PageHeader />
-      <Blurb />
+      <Blurb text="Click on any column header to sort the table." />
       <div id="table-wrapper">
         <DataTable />
       </div>

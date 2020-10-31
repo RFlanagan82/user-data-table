@@ -44,12 +44,13 @@
   top: 300px;
   right: 100px;
   color: white;
-  background: rgb(224, 170, 255);
+  background-color: rgb(90, 61, 119);
+  /* background: rgb(224, 170, 255);
   background: linear-gradient(
     121deg,
     rgba(224, 170, 255, 1) 0%,
     rgba(16, 0, 43, 1) 92%
-  );
+  ); */
 }
 
 #table-wrapper {
@@ -99,12 +100,7 @@ table th {
   text-align: center;
   /* background-color: #333333; */
   color: white;
-  background: rgb(16, 0, 43);
-  background: radial-gradient(
-    circle,
-    rgba(16, 0, 43, 1) 2%,
-    rgba(224, 170, 255, 1) 100%
-  );
+  background-color: #311c4d;
 }
 
 .navbar {
