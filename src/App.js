@@ -8,11 +8,13 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div className="App">
+    <>
       <PageHeader />
       <Blurb />
-      <DataTable />
+      <div id="table-wrapper">
+        <DataTable />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

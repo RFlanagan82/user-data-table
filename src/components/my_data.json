@@ -66,14 +66,14 @@
     "id": 10,
     "firstName": "Vincent",
     "lastName": "Kendrick",
-    "email": "-",
+    "email": "dagreatcode@gmail.com",
     "github": "dagreatcode"
   },
   {
     "id": 11,
     "firstName": "Joe",
     "lastName": "Lowery",
-    "email": "-",
+    "email": "joseph.loweryit@gmail.com",
     "github": "CrazyJoeShow"
   },
   {
@@ -178,7 +178,7 @@
     "id": 26,
     "firstName": "Andrew",
     "lastName": "Siegel",
-    "email": "-",
+    "email": "siegelal@protonmail.com",
     "github": "siegelal7"
   },
   {
@@ -199,7 +199,7 @@
     "id": 29,
     "firstName": "Raj",
     "lastName": "Kakar",
-    "email": "-",
+    "email": "rajdeepkakar@gmail.com",
     "github": "rajdeep24"
   },
   {
@@ -250,5 +250,12 @@
     "lastName": "Peach",
     "email": "jonmakesitbetter@gmail.com",
     "github": "jonmakesitbetter"
+  },
+  {
+    "id": 37,
+    "firstName": "Shah",
+    "lastName": "Farooqui",
+    "email": "shahmir.nazir.dev@gmail.com",
+    "github": "shahmir22"
   }
 ]
