@@ -4,8 +4,8 @@
 
 .jumbotron {
   -webkit-text-stroke: 1px #5a3d76;
-  margin-bottom: -32px;
-  height: 270px;
+  margin-bottom: 0px;
+  height: 300px;
   color: white;
   background: rgb(224, 170, 255);
   background: linear-gradient(
@@ -23,33 +23,34 @@
   font-size: 35pt;
 }
 
-#blurb {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgba(90, 61, 119, 0.5);
-  position: absolute;
-  top: 300px;
-  left: 100px;
-  color: white;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+.col-sm {
+  height: 50px;
+  display: grid;
+  place-items: center;
 }
 
-#search-span {
-  border: 1px solid white;
+.action-widget {
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 5px;
-  position: absolute;
-  top: 300px;
-  right: 100px;
   color: white;
+  border-radius: 5px;
+  height: 100%;
+  width: 80%;
+  display: grid;
+  place-items: center;
+}
+
+#blurb {
+  background-color: rgba(90, 61, 119, 0.5);
+}
+
+#search-div {
   background-color: rgb(90, 61, 119);
 }
 
 #table-wrapper {
   padding-left: 100px;
   padding-right: 100px;
-  padding-top: 140px;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 
@@ -63,12 +64,10 @@ table {
 }
 
 table tr th {
-  /* color: red; */
   font-size: 18pt;
 }
 
 table tr td {
-  /* color: red; */
   font-size: 14pt;
 }
 
@@ -90,7 +89,6 @@ table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  /* background-color: #333333; */
   color: white;
   background-color: #311c4d;
 }
@@ -104,7 +102,6 @@ table th {
 
 .navbar-brand {
   margin: auto;
-  /* border: 2px solid red; */
 }
 
 a {
@@ -113,4 +110,8 @@ a {
 
 a:hover {
   color: #40285c;
+}
+
+.row {
+  margin-bottom: 50px;
 }

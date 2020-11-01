@@ -31,7 +31,19 @@ const DataTable = () => {
 
   return (
     <>
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+      <div className="row">
+        <div className="col-sm">
+          <div className="action-widget" id="blurb">
+            Click on a column heading below to sort the table.
+          </div>
+        </div>
+        <div className="col-sm">
+          <div className="action-widget" id="search-div">
+            <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+          </div>
+        </div>
+      </div>
+
       <div>
         <table {...getTableProps()}>
           <thead>
