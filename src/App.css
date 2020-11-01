@@ -3,9 +3,9 @@
 }
 
 .jumbotron {
-  -webkit-text-stroke: 1px #5a3d76;
+  /* -webkit-text-stroke: 1px #5a3d76; */
   margin-bottom: 0px;
-  height: 300px;
+  height: 200px;
   color: white;
   background: rgb(224, 170, 255);
   background: linear-gradient(
@@ -16,11 +16,13 @@
 }
 
 .display-4 {
-  font-size: 60pt;
+  font-size: 40pt;
+  font-weight: bold;
 }
 
 .lead {
-  font-size: 35pt;
+  font-size: 20pt;
+  font-weight: bold;
 }
 
 .col-sm {
@@ -51,7 +53,10 @@
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 50px;
-  padding-bottom: 50px;
+  /* padding-bottom: 20px; */
+  height: calc(100vh - 240px);
+  /* border: 2px dashed green; */
+  overflow-y: auto;
 }
 
 table {
