@@ -257,5 +257,19 @@
     "lastName": "Farooqui",
     "email": "shahmir.nazir.dev@gmail.com",
     "github": "shahmir22"
+  },
+  {
+    "id": 38,
+    "firstName": "Ashlyn",
+    "lastName": "Smith",
+    "email": "ashlyn.marie.smith2@gmail.com",
+    "github": "AshlynMarie22"
+  },
+  {
+    "id": 39,
+    "firstName": "Alix",
+    "lastName": "Webb",
+    "email": "alixkwebb@gmail.com",
+    "github": "awebb8"
   }
 ]
